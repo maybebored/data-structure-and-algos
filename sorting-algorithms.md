@@ -90,3 +90,30 @@ func selectionSort(arr []int) {
 ```
 
 ### Insertion Sort
+
+- iterate for each item in the array incrementing from 1st index to the end, we assume first item is sorted
+- for each index position compare it with all the elements to the left
+	- **until** an element smaller than it is found or we reach the start of the list, pushing each element before it 1 place to the right
+	- when we find a smaller element we stop and place this right after the small element.
+- the worst case, is O(n^2) and best case is O(n) as until we get to the end of the loop there is no way to know the minimum until we traverse the entire list
+
+Example in [go playground](https://go.dev/play/p/iSB5rVxHwHO)
+
+```go
+func insertionSort(arr []int) {
+	for k := 1; k < len(arr); k++ {
+		temp := arr[k]
+		prev := k - 1
+		innerCount := 0
+		for prev >= 0 && temp < arr[prev] {
+			innerCount++
+			fmt.Printf("inner count: %v\n", innerCount)
+			arr[prev+1] = arr[prev]
+			prev -= 1
+		}
+
+		arr[prev+1] = temp
+		fmt.Printf("%v\n", arr)
+	}
+}
+```
