@@ -5,6 +5,7 @@ Used to sort linear data structures
 - [Bubble Sort](#bubble-sort)
 - [Selection Sort](#selection-sort)
 - [Insertion Sort](#insertion-sort)
+- [Merge Sort] (#merge-sort)
 
 Worst case time complexity is O(n^2)
 
@@ -117,3 +118,13 @@ func insertionSort(arr []int) {
 	}
 }
 ```
+
+### Merge Sort
+- divide and conquer algorithm, uses recursion
+- recursively divides the array by 2 until we are left with 1 item in each array. 
+- Then sorts them to get two sorted arrays. Then merges these sorted arrays into a new sorted array.
+- best and worst case is O(n * log(n))
+
+#### Why n * log(n)
+
+https://www.khanacademy.org/computing/computer-science/algorithms/merge-sort/a/analysis-of-merge-sort
